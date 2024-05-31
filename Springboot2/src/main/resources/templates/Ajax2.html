@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index2.js"></script>
+</head>
+<body>
+<div id="smartphoneList"></div>
+<form id="add-smartphone">
+    <h1>Form create</h1>
+    <table>
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" id="name" placeholder="name"></td>
+        </tr>
+        <tr>
+            <td><label for="type">Type:</label></td>
+            <td><select id="type" name="types"></select></td>
+        </tr>
+        <tr>
+            <td><label for="code">Code:</label></td>
+            <td><input type="text" id="code" placeholder="code"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add" onclick="addNewCustomers()"></td>
+        </tr>
+    </table>
+</form>
+<div id="edit-smartphone-1">
+
+</div>
+
+<h1 id="title">List smartphone</h1>
+<div id="div-btn">
+    <button onclick="displayFormCreate()" id="display-create">Create new smartphone</button>
+</div>
+</body>
+</html>

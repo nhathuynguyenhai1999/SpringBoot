@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Update Computer</title>
+</head>
+<body>
+<h3>Update Computers</h3>
+<p>
+    <a th:href="@{/computers}">
+        Back to Computers list
+    </a>
+</p>
+<div id="form">
+    <form th:action="@{/computers/update/{id}(id=${computer.id})}" th:object="${computer}" method="POST" novalidate="novalidate">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" th:field="*{name}"/>
+            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></div>
+        </div>
+        <div>
+            <label for="code">Code</label>
+            <input type="text" id="code" th:field="*{code}"/>
+            <div th:if="${#fields.hasErrors('code')}" th:errors="*{code}" class="error"></div>
+        </div>
+        <div>
+            <label for="type">Type</label>
+            <select id="type" th:field="*{type}">
+                <option th:each="p : ${types}" th:value="${p.id}" th:text="${p.name}"></option>
+            </select>
+            <div th:if="${#fields.hasErrors('type')}" th:errors="*{type}" class="error"></div>
+        </div>
+        <input type="submit" value="Edit"/>
+    </form>
+
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

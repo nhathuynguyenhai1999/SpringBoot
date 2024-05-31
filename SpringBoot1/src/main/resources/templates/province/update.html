@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="/layout :: head">
+    <title>Update Position</title>
+</head>
+<body>
+<h3>Update Positions</h3>
+<p>
+    <a th:href="@{/provinces}">
+        Back to positions list
+    </a>
+</p>
+<div id="form">
+    <form th:action="@{/provinces/update/{id}(id=${province.getId()})}" th:object="${province}"
+          method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" th:field="*{name}"/>
+        </div>
+        <input type="submit" value="Save"/>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

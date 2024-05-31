@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="index1.js"></script>
+</head>
+<body>
+<h1 id="title">Customer Management</h1>
+<div id="fuckingList"></div>
+<div id="add-customers" style="display: none;">
+    <form id="customerForm" onsubmit="addNewCustomers(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="code">Code:</label>
+        <input type="text" id="code" name="code"><br><br>
+        <label for="type">Type:</label>
+        <!--        <input type="text" id="type" name="type"><br><br>-->
+        <select id="type" name="types">
+            <!--            <option value="volvo">Volvo XC90</option>-->
+            <!--            <option value="saab">Saab 95</option>-->
+            <!--            <option value="mercedes">Mercedes SLK</option>-->
+            <!--            <option value="audi">Audi TT</option>-->
+        </select>
+        <button type="submit" onclick="addNewCustomer()">Add Customer</button>
+        <button onclick="backtoListCustomers()" id="back">Back</button>
+    </form>
+</div>
+<div id="edit-customers" style="display:none;">
+    <div id="edit-customer-1"></div>
+</div>
+<button id="display-create" onclick="displayFormCreate()">Add New Customer</button>
+<script>
+    // Place JavaScript code here
+</script>
+</body>
+</html>
